@@ -10,6 +10,9 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif"
 export const metadata: Metadata = {
   title: "Daily News Feed | Independent American Journalism",
   description: "Breaking news, health wellness, financial advice, and travel tips tailored for the modern American.",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({

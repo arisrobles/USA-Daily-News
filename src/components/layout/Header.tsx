@@ -62,7 +62,7 @@ export default function Header() {
                 </div>
 
                 <Link href="/" className="text-2xl sm:text-3xl md:text-5xl font-serif font-black tracking-tighter text-black uppercase text-center px-4">
-                    Daily <span className="text-secondary">News</span> Feed
+                    Daily <span className="text-primary">News</span> Feed
                 </Link>
 
                 <div className="flex items-center gap-3 sm:gap-6 relative">

@@ -62,10 +62,10 @@ export default function Footer() {
                 <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-muted gap-4">
                     <div className="flex flex-wrap justify-center gap-6">
                         <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-                        <Link href="/privacy" className="hover:underline">Terms of Service</Link>
-                        <Link href="/privacy" className="hover:underline">Ad Choices</Link>
-                        <Link href="/privacy" className="hover:underline">Cookie Policy</Link>
-                        <Link href="/privacy" className="hover:underline">Accessibility</Link>
+                        <Link href="/terms" className="hover:underline">Terms of Service</Link>
+                        <Link href="/ad-choices" className="hover:underline">Ad Choices</Link>
+                        <Link href="/cookies" className="hover:underline">Cookie Policy</Link>
+                        <Link href="/accessibility" className="hover:underline">Accessibility</Link>
                     </div>
                     <span>&copy; {currentYear} Daily News Feed. All rights reserved.</span>
                 </div>

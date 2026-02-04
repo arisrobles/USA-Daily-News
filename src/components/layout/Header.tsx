@@ -41,7 +41,7 @@ export default function Header() {
         <header className="border-b-4 border-primary bg-white sticky top-0 z-50">
             {/* Top Support Bar */}
             <div className="bg-primary text-white py-1">
-                <div className="news-container flex justify-between items-center text-xs font-bold uppercase tracking-wider">
+                <div className="news-container flex flex-col sm:flex-row justify-between items-center text-[10px] sm:text-xs font-bold uppercase tracking-wider gap-2">
                     <span>Wednesday, February 4, 2026</span>
                     <div className="flex gap-4">
                         <Link href="/contact" className="hover:underline">Support Quality Journalism</Link>
@@ -52,27 +52,27 @@ export default function Header() {
 
             {/* Main Header */}
             <div className="news-container py-6 flex justify-between items-center relative">
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3 sm:gap-6">
                     <button onClick={() => setIsMenuOpen(true)} className="hover:text-primary transition-colors">
-                        <Menu className="h-6 w-6 cursor-pointer" />
+                        <Menu className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
                     </button>
                     <button onClick={toggleSearch} className="hover:text-primary transition-colors">
-                        <Search className="h-6 w-6 cursor-pointer" />
+                        <Search className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
                     </button>
                 </div>
 
-                <Link href="/" className="text-4xl md:text-5xl font-serif font-black tracking-tighter text-black uppercase">
+                <Link href="/" className="text-2xl sm:text-3xl md:text-5xl font-serif font-black tracking-tighter text-black uppercase text-center px-4">
                     Daily <span className="text-secondary">News</span> Feed
                 </Link>
 
-                <div className="flex items-center gap-6 relative">
+                <div className="flex items-center gap-3 sm:gap-6 relative">
                     <div className="relative">
                         <button
                             onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
                             className="hover:text-primary transition-colors relative"
                         >
-                            <Bell className="h-6 w-6 cursor-pointer hidden md:block" />
-                            <span className="absolute -top-1 right-3 h-3 w-3 bg-secondary rounded-full border-2 border-white hidden md:block"></span>
+                            <Bell className="h-5 w-5 sm:h-6 sm:w-6 cursor-pointer" />
+                            <span className="absolute -top-1 right-0 sm:right-3 h-2 w-2 sm:h-3 sm:w-3 bg-secondary rounded-full border-2 border-white"></span>
                         </button>
 
                         {/* Notifications Dropdown */}
@@ -82,7 +82,7 @@ export default function Header() {
                                     className="fixed inset-0 z-10"
                                     onClick={() => setIsNotificationsOpen(false)}
                                 />
-                                <div className="absolute right-0 mt-4 w-80 bg-white border border-border shadow-xl z-20 rounded-sm animate-in fade-in zoom-in duration-200 origin-top-right">
+                                <div className="absolute right-0 mt-4 w-72 sm:w-80 bg-white border border-border shadow-xl z-20 rounded-sm animate-in fade-in zoom-in duration-200 origin-top-right">
                                     <div className="p-4 border-b border-border flex justify-between items-center">
                                         <h3 className="font-black text-xs uppercase tracking-widest">Recent Alerts</h3>
                                         <span className="text-[10px] font-bold text-primary cursor-pointer hover:underline">Mark all read</span>
@@ -113,7 +113,7 @@ export default function Header() {
                         )}
                     </div>
                     <Link href="/login" className="flex items-center gap-2 cursor-pointer group">
-                        <User className="h-6 w-6 group-hover:text-primary" />
+                        <User className="h-5 w-5 sm:h-6 sm:w-6 group-hover:text-primary" />
                         <span className="font-bold text-sm uppercase hidden lg:block group-hover:text-primary">Sign In</span>
                     </Link>
                 </div>
@@ -121,8 +121,8 @@ export default function Header() {
                 {/* Search Bar Overlay */}
                 {isSearchOpen && (
                     <div className="absolute inset-0 bg-white z-20 flex items-center px-4 animate-in slide-in-from-top duration-300">
-                        <div className="flex-grow max-w-2xl mx-auto flex items-center gap-4">
-                            <Search className="h-6 w-6 text-muted" />
+                        <div className="flex-grow w-full flex items-center gap-2 sm:gap-4">
+                            <Search className="h-5 w-5 sm:h-6 sm:w-6 text-muted" />
                             <input
                                 autoFocus
                                 type="text"
@@ -130,10 +130,10 @@ export default function Header() {
                                 onChange={(e) => setSearchQuery(e.target.value)}
                                 onKeyDown={handleSearch}
                                 placeholder="Search the news..."
-                                className="flex-grow bg-transparent border-none focus:ring-0 text-xl font-serif italic py-4"
+                                className="flex-grow bg-transparent border-none focus:ring-0 text-lg sm:text-xl font-serif italic py-2 sm:py-4 min-w-0"
                             />
                             <button onClick={() => setIsSearchOpen(false)}>
-                                <X className="h-6 w-6 text-muted hover:text-secondary" />
+                                <X className="h-5 w-5 sm:h-6 sm:w-6 text-muted hover:text-secondary" />
                             </button>
                         </div>
                     </div>

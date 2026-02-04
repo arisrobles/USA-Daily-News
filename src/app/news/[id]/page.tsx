@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Share2, MessageCircle, Bookmark, Printer } from 'lucide-react';
 import AdPlaceholder from '@/components/ui/AdPlaceholder';
+import ArticleActions from '@/components/news/ArticleActions';
 
 export default async function ArticlePage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -50,20 +51,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
                         </div>
                     </div>
 
-                    <div className="flex gap-4">
-                        <button className="p-2 border border-border rounded-full hover:bg-accent transition-colors">
-                            <Share2 className="h-5 w-5" />
-                        </button>
-                        <button className="p-2 border border-border rounded-full hover:bg-accent transition-colors">
-                            <MessageCircle className="h-5 w-5" />
-                        </button>
-                        <button className="p-2 border border-border rounded-full hover:bg-accent transition-colors">
-                            <Bookmark className="h-5 w-5" />
-                        </button>
-                        <button className="p-2 border border-border rounded-full hover:bg-accent transition-colors">
-                            <Printer className="h-5 w-5" />
-                        </button>
-                    </div>
+                    <ArticleActions />
                 </div>
             </div>
 
@@ -89,7 +77,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ id: st
                         dangerouslySetInnerHTML={{ __html: article.content }}
                     />
 
-                    <div className="mt-16 p-8 bg-accent border border-border rounded-sm">
+                    <div id="engagement-section" className="mt-16 p-8 bg-accent border border-border rounded-sm">
                         <h3 className="text-2xl font-serif font-black mb-4">Inside Our Journalism</h3>
                         <p className="text-sm text-muted leading-relaxed mb-6">
                             Everything we publish is verified by our editorial team. As an independent newsroom, our only loyalty is to our readers. Support our work by becoming a subscriber today.
